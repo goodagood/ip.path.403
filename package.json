@@ -1,0 +1,23 @@
+{
+  "name": "ip.path.403",
+  "version": "0.0.1",
+  "description": "express.js middle-ware filtering out request to 403 by ip and url path according patterns",
+  "author": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/goodagood/ip.path.403.git"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/goodagood/ip.path.403/issues"
+  },
+  "homepage": "https://github.com/goodagood/ip.path.403#readme",
+  "dependencies": {
+    "request-ip": "^2.0.2"
+  }
+}
