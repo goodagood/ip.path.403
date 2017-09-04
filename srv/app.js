@@ -5,8 +5,6 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var index = require('./routes/index');
-var users = require('./routes/users');
 
 var app = express();
 
@@ -22,6 +20,22 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+const filter = require("../index.js");
+const opt = {
+    patterns: [/.+any.+/, /secret/],
+};
+app.use(filter(opt));
+
+
+app.get('/hi', function(req, res){
+    res.end('<h1> hi </h1>');
+});
+
+
+// from express-generator's sample setting
+var index = require('./routes/index');
+var users = require('./routes/users');
 app.use('/', index);
 app.use('/users', users);
 

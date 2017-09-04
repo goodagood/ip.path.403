@@ -4,12 +4,12 @@ const reqIp  = require("request-ip");
 var p = console.log;
 
 
-function filterMalicious(opt){
+function filter(opt){
 
-    const msg = opt.msg || "communists are not welcomed. <br /> " +
-        "They torture and kill in hundred millions, <br /> " +
-        "they are cheating and rewritting history books, <br /> " +
-        "and keep the torturing and killing.";
+    const msg = opt.msg || "communists are not welcomed.  " +
+        "They torture and kill in hundred millions,  " +
+        "they keep on cheating and rewriting history books,  " +
+        "they have never ever stopped the torturing and killing.";
 
     const getIdentifier = opt.getId || function(req){
 
@@ -54,4 +54,4 @@ function patternTest(patterns, candidate){
 }
 
 
-module.exports = filterMalicious;
+module.exports = filter;
