@@ -16,7 +16,7 @@ function filter(opt){
         var ip  = reqIp.getClientIp(req);
         var url = req.originalUrl;
 
-        p('get identity ', ip, url)
+        //p('get identity ', ip, url)
 
         return ip + url;
     }
@@ -43,9 +43,9 @@ function patternTest(patterns, candidate){
 
     var i = 0;
     for(i=0; i < len; i++){
-        p('to test : ', patterns[i].source, candidate);
+        //p('to test pattern : ', patterns[i].source, candidate);
         if(patterns[i].test(candidate)){
-            p('tested : ', patterns[i].source, candidate);
+            //p('pattern tested : ', patterns[i].source, candidate);
             return true;
         }
     }
