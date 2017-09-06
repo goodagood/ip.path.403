@@ -25,8 +25,7 @@ function filter(opt){
         var testCandidate = getIdentifier(req);
 
         if( patternTest(opt.patterns, testCandidate)){
-            console.log('pass pattern test ', req.ip);
-
+            console.log('403 for ', testCandidate);
             res.status(403).end(msg);
             return;
         }
