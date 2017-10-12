@@ -11,6 +11,14 @@ function filter(opt){
         "they keep on cheating and rewriting history books,  " +
         "they have never ever stopped the torturing and killing.";
 
+    var pats = readOpt();
+    pats.each(function(pat){
+        if(opt.patterns.indexOf(pat) == -1){
+            opt.patterns.push(pat);
+        }
+    });
+
+
     const getIdentifier = opt.getId || function(req){
 
         var ip  = reqIp.getClientIp(req);
@@ -50,6 +58,20 @@ function patternTest(patterns, candidate){
     }
 
     return false;
+}
+
+
+function readOpt(filePath="/my/opt/filter.js"){
+    try{
+        var opt = require(filePath);
+    }catch(e){
+        p(e);
+        return [];
+    }
+
+    if(opt.patterns) return opt.patterns;
+
+    return [];
 }
 
 
