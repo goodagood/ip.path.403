@@ -12,11 +12,16 @@ function filter(opt){
         "they have never ever stopped the torturing and killing.";
 
     var pats = readOpt();
-    pats.each(function(pat){
-        if(opt.patterns.indexOf(pat) == -1){
-            opt.patterns.push(pat);
+    for(var i=0, len=pats.length; i < len; i++){
+        if(opt.patterns.indexOf(pats[i]) == -1){
+            opt.patterns.push(pats[i]);
         }
-    });
+    }
+    //pats.forEach(function(pat){
+    //    if(opt.patterns.indexOf(pat) == -1){
+    //        opt.patterns.push(pat);
+    //    }
+    //});
 
 
     const getIdentifier = opt.getId || function(req){
